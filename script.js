@@ -9,6 +9,8 @@ const addTask = (evento) => {
   list.appendChild(task);
 }
 
+const taskList = [];
+
 const createTask = (evento) => {
   evento.preventDefault();
   const input = document.querySelector('[data-form-input]');
@@ -21,6 +23,14 @@ const createTask = (evento) => {
   input.value = '';
   //backticks
   const taskContent = document.createElement('div');
+
+  const taskObj = {
+    value,
+    dateFormat
+  }
+
+  taskList.push(taskObj)
+  localStorage.setItem("tasks", JSON.stringify(taskList))
 
   const titleTask = document.createElement('span');
   titleTask.classList.add('task');
