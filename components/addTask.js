@@ -7,7 +7,6 @@ export const addTask = (evento) => {
             const input = document.querySelector('[data-form-input]');
             const calendar = document.querySelector('[data-form-date]');
 
-    
             const value = input.value;
             const date = calendar.value;
             const dateFormat = moment(date).format("DD/MM/YYYY");
@@ -50,5 +49,5 @@ export const createTask = ({value, dateFormat}) => {
             task.appendChild(taskContent);
             task.appendChild(dateElement)
             task.appendChild(deleteIcon());
-    return task
+    return task;
 };
